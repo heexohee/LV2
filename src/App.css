@@ -1,13 +1,23 @@
 .app-style {
-  min-height: 100px;
+  min-height: 200px;
   padding: 100px;
   display: flex;
   gap: 12px;
 }
+
 .component-style {
-  width: 100px;
-  height: 100px;
-  border: 1px solid green;
+  width: 300px;
+  height: 120px;
+  border: 2px solid rgb(73, 67, 250);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.component-style2 {
+  width: 300px;
+  height: 120px;
+  border: 2px solid rgb(28, 227, 174);
   border-radius: 10px;
   display: flex;
   align-items: center;
