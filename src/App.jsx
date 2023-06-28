@@ -48,42 +48,7 @@ const App = () => {
 
   console.log(users);
 
-  // .add-form {
-  //   background-color: #eee;
-  //   border-radius: 12px;
-  //   margin: 0 auto;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: space-between;
-  //   padding: 30px;
-  //   gap: 20px;
-  // }
   
-  // .input-group {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 20px;
-  // }
-  
-  // .form-label {
-  //   font-size: 16px;
-  // font-weight: 700;
-  // }
-  
-  // .add-input{ 
-  //   height: 40px;
-  //   width: 240px;
-  //   border: none;
-  //   border-radius: 12px;
-  //   padding: 0 12px;
-  // }
-  
-  
-
-
-
-
-
 
 
   return (
