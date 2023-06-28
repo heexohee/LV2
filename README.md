@@ -1,3 +1,9 @@
+
+## 현재 상태에 따라 블럭이 위, 아래 위치로 위치가 달라지는 등의 css 구현 진행 중입니다. 구현 전 제가 의도한 대로 코드가 효율적으로 동작하는지, 불변성 등은 지켜지는 지 리뷰가 필요합니다.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
