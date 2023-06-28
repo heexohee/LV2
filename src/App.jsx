@@ -48,21 +48,61 @@ const App = () => {
 
   console.log(users);
 
+  // .add-form {
+  //   background-color: #eee;
+  //   border-radius: 12px;
+  //   margin: 0 auto;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   padding: 30px;
+  //   gap: 20px;
+  // }
+  
+  // .input-group {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 20px;
+  // }
+  
+  // .form-label {
+  //   font-size: 16px;
+  // font-weight: 700;
+  // }
+  
+  // .add-input{ 
+  //   height: 40px;
+  //   width: 240px;
+  //   border: none;
+  //   border-radius: 12px;
+  //   padding: 0 12px;
+  // }
+  
+  
+
+
+
+
+
+
+
   return (
     <div>
-      <div className='srs'>
+    <form className='add-form'>
+      <div className='input-group'>
         <div className='input-container'>
-          <span className='input-label'>제목:</span>
-          <input className='input-field' value={name} onChange={nameChangeHandler} />
+          <span className='.form-label'>제목:</span>
+          <input className='add-input' value={name} onChange={nameChangeHandler} />
         </div>
         <div className='input-container'>
-          <span className='input-label'>내용:</span>
-          <input className='input-field' value={age} onChange={ageChangeHandler} />
+          <span className='.form-label'>내용:</span>
+          <input className='add-input' value={age} onChange={ageChangeHandler} />
         </div>
-        <div className='button-container'>
-          <Button clickAddButtonHandler={clickAddButtonHandler}>추가하기</Button>
+        <Button className='add-button' clickAddButtonHandler={clickAddButtonHandler}>추가하기</Button>
         </div>
-      </div>
+         
+      </form>
+
       <div className='app-style'>
         {users.map((item) => (
           <User

@@ -1,5 +1,5 @@
 const Button =({clickAddButtonHandler, children})=>{ //구조 분해 할당으로 가져옴.(???)
-    return  <button onClick={ clickAddButtonHandler}>{children}</button>
+    return  <button className = 'add-button' onClick={ clickAddButtonHandler}>{children}</button>
     };
     
     export default Button;

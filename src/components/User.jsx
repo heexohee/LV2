@@ -3,16 +3,16 @@ const User = ({ item, removeFunction, DoneFunction, YetFunction }) => {
     return (
       <div key={item.id} className='component-style'>
         {item.age}{item.name}
-        <button className="deleteButton"onClick={() => removeFunction(item.id)}>삭제하기</button>
-        <button onClick={() => DoneFunction(item.id, item.isDone)}>완료하기</button>
+        <button className = "delete-Button" onClick={() => removeFunction(item.id)}>삭제하기</button>
+        <button className = "done-Button" onClick={() => DoneFunction(item.id, item.isDone)}>완료하기</button>
       </div>
     );
   } else {
     return (
       <div key={item.id} className='component-style2'>
         {item.age}{item.name}
-        <button onClick={() => removeFunction(item.id)}>삭제하기</button>
-        <button onClick={() => DoneFunction(item.id, item.isDone)}>취소하기</button>
+        <button className = "delete-Button" onClick={() => removeFunction(item.id)}>삭제하기</button>
+        <button className = "done-Button" onClick={() => DoneFunction(item.id, item.isDone)}>취소하기</button>
       </div>
     );
   }
