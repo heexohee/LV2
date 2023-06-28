@@ -52,15 +52,16 @@ const App = () => {
 
 
   return (
+    
     <div>
     <div className='add-form'>
       <div className='input-group'>
         <div className='input-container'>
-          <span className='.form-label'>제목:</span>
+          <label className='form-label'>제목:</label>
           <input className='add-input' value={name} onChange={nameChangeHandler} />
         </div>
         <div className='input-container'>
-          <span className='.form-label'>내용:</span>
+          <label className='form-label'>내용:</label>
           <input className='add-input' value={age} onChange={ageChangeHandler} />
         </div>
         <Button className='add-button' clickAddButtonHandler={clickAddButtonHandler}>추가하기</Button>
@@ -79,6 +80,7 @@ const App = () => {
         ))}
       </div>
     </div>
+   
   );
 };
 
