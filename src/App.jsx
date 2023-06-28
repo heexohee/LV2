@@ -5,7 +5,7 @@ import User from './components/User';
 
 const App = () => {
   const [users, setUsers] = useState([
-    { id: 0, age: '', name: '', isDone: false },
+    { id: 0, age: '리액트', name: 'props 복습하기', isDone: false },
   ]);
 
   const [name, setName] = useState('');
