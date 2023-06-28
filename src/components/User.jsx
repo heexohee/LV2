@@ -3,7 +3,7 @@ const User = ({ item, removeFunction, DoneFunction, YetFunction }) => {
     return (
       <div key={item.id} className='component-style'>
         {item.age}{item.name}
-        <button onClick={() => removeFunction(item.id)}>삭제하기</button>
+        <button className="deleteButton"onClick={() => removeFunction(item.id)}>삭제하기</button>
         <button onClick={() => DoneFunction(item.id, item.isDone)}>완료하기</button>
       </div>
     );

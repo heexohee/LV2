@@ -46,16 +46,22 @@ const App = () => {
     setUsers(updatedUsers);
   };
 
+  console.log(users);
+
   return (
     <div>
-      <div>
-        제목: &nbsp;
-        <input value={name} onChange={nameChangeHandler} />
-        <br />
-        내용: &nbsp;
-        <input value={age} onChange={ageChangeHandler} />
-        <br />
-        <Button clickAddButtonHandler={clickAddButtonHandler}>추가하기</Button>
+      <div className='srs'>
+        <div className='input-container'>
+          <span className='input-label'>제목:</span>
+          <input className='input-field' value={name} onChange={nameChangeHandler} />
+        </div>
+        <div className='input-container'>
+          <span className='input-label'>내용:</span>
+          <input className='input-field' value={age} onChange={ageChangeHandler} />
+        </div>
+        <div className='button-container'>
+          <Button clickAddButtonHandler={clickAddButtonHandler}>추가하기</Button>
+        </div>
       </div>
       <div className='app-style'>
         {users.map((item) => (
