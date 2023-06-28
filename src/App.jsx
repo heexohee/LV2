@@ -88,7 +88,7 @@ const App = () => {
 
   return (
     <div>
-    <form className='add-form'>
+    <div className='add-form'>
       <div className='input-group'>
         <div className='input-container'>
           <span className='.form-label'>제목:</span>
@@ -101,7 +101,7 @@ const App = () => {
         <Button className='add-button' clickAddButtonHandler={clickAddButtonHandler}>추가하기</Button>
         </div>
          
-      </form>
+      </div>
 
       <div className='app-style'>
         {users.map((item) => (
