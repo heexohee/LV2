@@ -1,4 +1,4 @@
-const User = ({ item, removeFunction, DoneFunction, YetFunction }) => {
+const User = ({ item, removeFunction, DoneFunction }) => {
   if (item.isDone === false) {
     return (
       <div key={item.id} className='component-style'>
