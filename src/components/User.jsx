@@ -1,18 +1,59 @@
-const User = ({ type, item, removeFunction, DoneFunction }) => {
-  if (item.isDone === type) {  // type에 따라서, type false 면 false, true 면 true 
-    return (
-      <div key={item.id} className='component-style'>
-        {item.age} : {item.name}
-        <button className = "delete-Button" onClick={() => removeFunction(item.id)}>삭제하기</button>
-        <button className = "done-Button" onClick={() => DoneFunction(item.id)}>{type ? "취소" : "완료"}</button>
-      </div>
-    );
+import { useSelector, useDispatch } from 'react-redux'
+import { delete_todo,update_todo, getTodo } from '../redux/modules/todoSlice'
+
+const User = ({ type, title }) => {
+  const todoLists = useSelector(getTodo)
+  // const todoLists = useSelector(store => store.todoReducer);
+  const dispath = useDispatch()
+  const removeFunction = (id) => {
+    dispath(delete_todo(id))
+    // setState(state.filter(item => item.id !== id))
+  };
+
+  const DoneFunction = (id) => {
+    dispath(update_todo(id))
+    // setState(state.map(item => {
+    //   if(item.id === id) {
+    //     return {...item,isDone: !item.isDone}
+    //   } else {
+    //     return item 
+    //   }
+    // }))
+  };
+
+  return (<>  
+    <h3>{title}</h3>
+    <div className='app-style'>  
+      {todoLists.map(todo => todo.isDone === type && (
+      <div key={todo.id} className='component-style'>
+      {todo.title} : {todo.content}
+      <button className = "delete-Button" onClick={() => removeFunction(todo.id)}>삭제하기</button>
+      <button className = "done-Button" onClick={() => DoneFunction(todo.id)}>{type ? "취소" : "완료"}</button>
+  </div>
+  ))}  
+  </div>
+  </>)
+}
+
+export default User;
+
+/*
+  /// 일반함수 
+  if (todo.isDone === type) {
+    retrun <div>...</div>
   } else {
     return null
   }
-};
 
-export default User;
+  /// 삼항 조건부 연산자
+  todo.isDone === type 
+    ? <div>...</div>
+    : null 
+
+  /// 논리 연산자 
+  todo.isDone === type && <div>...</div>
+*/
+
 
 
 //반복되는 부분을 하나의 컴포넌트로서 관리하면 좋겠다.

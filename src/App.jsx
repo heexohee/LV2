@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from './components/Button';
 import User from './components/User';
+import { useDispatch } from 'react-redux'
+import { add_todo } from './redux/modules/todoSlice'
 
   /*
     리액트의 일부 : "상태를 어떻게 관리"할 것인가
@@ -41,17 +43,18 @@ import User from './components/User';
     // 단일 함수, 덮어쓰기만. 단순처리만.
 
 
-const initialState = [
-  { id: 0, age: '리액트', name: 'props 복습하기', isDone: false },
-  { id: 1, age: '리액트', name: 'props 복습하기', isDone: false },
-  { id: 3, age: '리액트', name: 'props 복습하기', isDone: false },
-];
+// const initialState = [
+//   { id: 0, age: '리액트', name: 'props 복습하기', isDone: false },
+//   { id: 1, age: '리액트', name: 'props 복습하기', isDone: false },
+//   { id: 3, age: '리액트', name: 'props 복습하기', isDone: false },
+// ];
 
 
 const App = () => {
-  const [state, setState] = useState(initialState);
+  // const [state, setState] = useState(initialState);
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
+  const dispath = useDispatch()
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -62,31 +65,20 @@ const App = () => {
   };
 
   const clickAddButtonHandler = () => {
-    const newUser = {
+    const newTodo = {
       id: Date.now(),
-      age: age,
-      name: name,
+      title: age,
+      content: name,
       isDone: false,
     };
     
-    setState([...state, newUser])
+    dispath(add_todo(newTodo))
+    // setState([...state, newUser])
     setName('');
     setAge('');
   };
 
-  const clickRemoveButtonHandler = (id) => {
-    setState(state.filter(item => item.id !== id))
-  };
 
-  const clickDoneButtonHandler = (id) => {
-    setState(state.map(item => {
-      if(item.id === id) {
-        return {...item,isDone: !item.isDone}
-      } else {
-        return item 
-      }
-    }))
-  };
   
   return (
     <AppContainer>
@@ -107,32 +99,9 @@ const App = () => {
       </div>
 
       {/* working -------- -------- -------- */}
-      <h3>working</h3>
-      <div className='app-style'>  
-        {state.map(item => (
-            <User 
-              type={false}
-              key={item.id}
-              item={item}
-              removeFunction={clickRemoveButtonHandler}
-              DoneFunction={clickDoneButtonHandler}
-            />
-        ))}
-      </div>
-
-      {/* done -------- -------- -------- */}
-      <h3>done</h3>
-      <div className='app-style'>  
-      {state.map(item => (
-            <User 
-              type={true}
-              key={item.id}
-              item={item}
-              removeFunction={clickRemoveButtonHandler}
-              DoneFunction={clickDoneButtonHandler}
-            />
-        ))}
-    </div>
+      <User type={false} title="working..."/>
+      {/* done -------- -------- -------- */}    
+      <User type={true}  title="done..."/>
     </AppContainer>
   );
 };
