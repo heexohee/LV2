@@ -99,9 +99,9 @@ const App = () => {
       </div>
 
       {/* working -------- -------- -------- */}
-      <User type={false} title="working..."/>
+      <User type={false} title="Working...🔥"/>
       {/* done -------- -------- -------- */}    
-      <User type={true}  title="done..."/>
+      <User type={true}  title="Done...👍"/>
     </AppContainer>
   );
 };
