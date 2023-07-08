@@ -4,6 +4,12 @@ import Button from './components/Button';
 import User from './components/User';
 import { useDispatch } from 'react-redux'
 import { add_todo } from './redux/modules/todoSlice'
+import Router from "./shared/Router";
+
+// function App() {
+//   return <Router />;
+// }
+
 
   /*
     리액트의 일부 : "상태를 어떻게 관리"할 것인가

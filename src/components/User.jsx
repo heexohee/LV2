@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { delete_todo,update_todo, getTodo } from '../redux/modules/todoSlice'
+// import { NavLink } from "react-router-dom";
+//import { Link } from 'react-router-dom'; 
 
 const User = ({ type, title }) => {
   const todoLists = useSelector(getTodo)
@@ -26,9 +28,13 @@ const User = ({ type, title }) => {
     <div className='app-style'>  
       {todoLists.map(todo => todo.isDone === type && (
       <div key={todo.id} className='component-style'>
+          {/* <NavLink to={`/${todo.id}`}>상세페이지</NavLink> */}
       {todo.title} : {todo.content}
+     
       <button className = "delete-Button" onClick={() => removeFunction(todo.id)}>삭제하기</button>
       <button className = "done-Button" onClick={() => DoneFunction(todo.id)}>{type ? "취소" : "완료"}</button>
+  
+     {/* <Link to={`/detail/${todo.id}`}>상세보기</Link> */}
   </div>
   ))}  
   </div>
